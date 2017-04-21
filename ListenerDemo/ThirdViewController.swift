@@ -18,12 +18,12 @@ class ThirdViewController: UIViewController {
         
         title = "Third"
         
-        UserInfo.name.bindAndFireListener("ThirdViewController.nameButton") { name in
-            self.nameButton.setTitle(name, for: .normal)
+        UserInfo.name.bindAndFireListener("ThirdViewController.nameButton") { [weak self] name in
+            self?.nameButton.setTitle(name, for: .normal)
         }
         
-        UserInfo.hairColor.bindAndFireListener("ThirdViewController.backgroundColor") { color in
-            self.view.backgroundColor = color
+        UserInfo.hairColor.bindAndFireListener("ThirdViewController.backgroundColor") { [weak self] color in
+            self?.view.backgroundColor = color
         }
     }
     

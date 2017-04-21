@@ -21,6 +21,4 @@ class UserInfo {
             print("\(hairColor)")
         }
     }()
-    
-//    static var hairColor = Listenable<UIColor>(UIColor.red)
 }

@@ -17,12 +17,12 @@ class SecondViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         title = "Second"
         
-        UserInfo.name.bindAndFireListener("SecondViewController.nameButton") { name in
-            self.nameButton.setTitle(name, for: UIControlState())
+        UserInfo.name.bindAndFireListener("SecondViewController.nameButton") { [weak self] name in
+            self?.nameButton.setTitle(name, for: UIControlState())
         }
         
-        UserInfo.hairColor.bindListener("SecondViewController.backgroundColor") { color in
-            self.view.backgroundColor = color
+        UserInfo.hairColor.bindListener("SecondViewController.backgroundColor") { [weak self] color in
+            self?.view.backgroundColor = color
         }
     }
     

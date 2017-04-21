@@ -50,12 +50,14 @@ final public class Listenable<T> {
         bindListener(name, action: action)
         
         action(value)
+        print("bindlistener = \(name), value = \(value)")
     }
     
     public func removeListenerWithName(_ name: String) {
         for listener in listenerSet {
             if listener.name == name {
                 listenerSet.remove(listener)
+                print("remove = \(name)")
                 break
             }
         }

@@ -17,12 +17,12 @@ class FirstViewController: UIViewController {
         
         title = "First"
         
-        UserInfo.name.bindAndFireListener("FirstViewController.nameButton") { name in
-            self.nameButton.setTitle(name, for: UIControlState())
+        UserInfo.name.bindAndFireListener("FirstViewController.nameButton") { [weak self] name in
+            self?.nameButton.setTitle(name, for: UIControlState())
         }
         
-        UserInfo.hairColor.bindAndFireListener("FirstViewController.backgroundColor") { color in
-            self.view.backgroundColor = color
+        UserInfo.hairColor.bindAndFireListener("FirstViewController.backgroundColor") { [weak self] color in
+            self?.view.backgroundColor = color
         }
     }
 
